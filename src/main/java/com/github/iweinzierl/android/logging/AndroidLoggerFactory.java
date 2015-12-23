@@ -25,6 +25,10 @@ public class AndroidLoggerFactory implements ILoggerFactory {
     }
 
     public Logger getLogger(final String name) {
+        return getLogger(name, logTag);
+    }
+
+    public Logger getLogger(final String name, final String logTag) {
         AndroidLogger logger = loggers.get(name);
         if (logger == null) {
             String loggerName = stripName(name);
